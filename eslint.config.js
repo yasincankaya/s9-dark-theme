@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import prettier from "eslint-config-prettier/flat";
+import globals from "globals";
 
 export default [
   js.configs.recommended,
@@ -21,6 +22,7 @@ export default [
         __dirname: "readonly",
         console: "readonly",
         process: "readonly",
+        ...globals.browser,
       },
     },
     plugins: {
